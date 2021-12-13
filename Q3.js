@@ -4,6 +4,7 @@ var app = express();
 
 app.use(express.json());
 
+//Total salary Body Contains hrs,basic,da,it and pf
 app.post('/total_salary',(req,res)=>{
     var hra = req.body.hra;
     var basic = req.body.basic;
@@ -14,6 +15,7 @@ app.post('/total_salary',(req,res)=>{
     res.send({'tota;_salary':basic + hra + da - (it + pf)})
 })
 
+//Server Running at 8000 port
 app.listen(8000,()=>{
     console.log("Server started")
 })
